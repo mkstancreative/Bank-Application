@@ -1,0 +1,247 @@
+@import "./resets";
+@import "./variables";
+@import "./mixins";
+
+
+.form-container{
+    border-radius: 10px;
+    position: relative;
+    
+}
+.signup-right{
+    position: relative;
+    margin: 1rem 0rem;
+    .form{
+        @include flexCenter(column);
+        width: 90%;
+        padding: 2rem;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 30px;
+    }
+
+    .form-inputs{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    
+        .form-label{
+            font-size: 1rem;
+            margin-bottom: 6px;
+            display: inline-block;
+            padding-top: 1rem;
+            padding-bottom: 0.2rem;
+            font-weight: bolder;
+            margin-left: 1.7rem;
+        }
+    
+        .form-input{
+            padding: 10px;
+            display: block;
+            width: 90%;
+            margin: 0px auto;
+            outline: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            
+            &:hover{
+                transition: all 0.3s ease-out;
+                cursor: pointer;
+            }
+        }
+    
+        p{
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            color: red;
+        }
+    }
+    
+    .form-input-btn{
+        @include submitBtn;
+    }
+    
+    .Message{
+        font-weight: bolder;
+    
+        .next-page{
+            color: rgb(255, 95, 2) ;
+        }
+    }
+
+
+}
+
+.signup-left{
+    margin: 5rem 0rem;
+    position: relative;
+
+    &::before{
+        position:absolute;
+        display:block;
+        width: 95.8%;
+        height:100%;
+        background:rgba(0, 0, 0, 0.5);
+        content: ' ' ;
+        z-index: 1;
+    }
+    .form-header{
+        padding: 5rem;
+        position: absolute;
+        top: 2rem;
+        z-index: 99;
+
+        &:hover{
+            cursor: pointer;
+        }
+        h1{
+        font-family: $fontFamily;
+        font-weight: 100;
+        font-size: 3.5rem;
+        letter-spacing: 1rem;
+        font-weight: bolder;
+        line-height: 3rem;
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+        line-height: 3.5rem;
+
+            &:hover{
+                color: $textFancyColor; 
+            }
+        }
+
+        p{
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            font-size: 1.5rem;
+        }
+    }
+    
+    
+    #cover{
+        width: 100%;
+        height: 80vh;
+    }
+    img.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    }
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+    .signup-right{
+        padding: 0rem;
+      
+        .form{
+            @include flexCenter(column);
+            width: 90%;
+            margin : 0px auto;
+            padding: 2rem;
+            box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+        }
+    
+        .form-inputs{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            .form-label{
+                font-size: 1rem;
+                margin-bottom: 6px;
+                display: inline-block;
+                padding-top: 1rem;
+                padding-bottom: 0.2rem;
+                font-weight: bolder;
+                margin-left: 1rem;
+                margin-top: 0.5rem;
+            }
+        
+            .form-input{
+                padding: 10px;
+                display: block;
+                width: 90%;
+                margin: 0px auto;
+                outline: none;
+                border-top: none;
+                border-left: none;
+                border-right: none;
+            }
+        
+            p{
+                font-size: 0.8rem;
+                margin-top: 0.5rem;
+                color: red;
+            }
+        }
+        
+        .form-input-btn{
+            @include submitBtn;
+            margin: 2rem auto;
+        }
+        
+        .Message{
+            font-weight: bolder;
+            text-align: center;
+        
+            .next-page{
+                color: rgb(255, 95, 2) ;
+            }
+        }
+    }
+
+
+    .signup-left{
+        margin: 0.1rem auto;
+        position: sticky;
+        padding: 0rem;
+    
+        &::before{
+            width: 100%;
+            margin: 0px auto;
+            
+        }
+        .form-header{
+            position: absolute;
+            top: 2rem;
+            
+            z-index: 99;
+            padding: 1rem;
+            
+    
+            &:hover{
+                cursor: pointer;
+  
+            }
+            h1{
+            font-family: $fontFamily;
+            font-size: rem;
+            margin: 5rem auto 0rem auto;
+            letter-spacing: 0.1rem;
+            color: white;
+            text-align: center;
+  
+    
+                &:hover{
+                    color: $textFancyColor; 
+                }
+            }
+    
+            p{
+                text-align: center;
+                color: white;
+                font-weight: bolder;
+                font-size: 1rem;
+            }
+        }
+    }
+    
+}

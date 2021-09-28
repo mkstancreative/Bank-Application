@@ -1,0 +1,20 @@
+@import "./variables";
+
+
+@mixin flexCenter($direction){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin submitBtn{
+    padding: 10px;
+    margin: 12px;
+    border-style: none;
+    outline: none;
+    width: 200px;
+    color: white;
+    background: $BtnColor;
+    transition: all 0.3s ease;
+}
